@@ -1,0 +1,19 @@
+node_modules/
+work/*
+!work/.gitkeep
+output/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+resume/source/*
+!resume/source/.gitkeep
+# Personal content and reference-derived styles stay local.
+resume/base_resume.json
+kit/DESIGN_SPEC.json
+kit/DESIGN_SPEC.report.json
+.codex/
+.claude/
+.agents/
+.aws/

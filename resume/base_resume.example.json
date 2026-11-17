@@ -1,0 +1,68 @@
+{
+  "name": "ALEX MORGAN",
+  "title": "Senior Frontend Engineer",
+  "location": "Austin, TX | Open to Relocation | Open to Remote",
+  "email": "alex.morgan@example.com",
+  "phone": "+1 555 010 0199",
+  "linkedin": "linkedin.com/in/alex-morgan-example",
+  "summary": "Senior Frontend Engineer with 8 years of experience building scalable, accessible web applications with React, TypeScript, and JavaScript across e-commerce, fintech, and logistics. Skilled in component architecture, state management, performance tuning, REST and GraphQL integration, and automated testing. Experienced in using AI coding assistants (GitHub Copilot, Claude) to speed up delivery while reviewing every output for quality. Available immediately.",
+  "skills": [
+    ["Frontend", "React, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS"],
+    ["State & Data", "Redux Toolkit, React Query, Zustand, Context API, Caching"],
+    ["APIs", "REST APIs, GraphQL, Axios, WebSockets"],
+    ["UI & Styling", "Tailwind CSS, Material UI, Styled Components, Responsive Design"],
+    ["Design Systems", "Reusable Component Libraries, Storybook, Design Tokens"],
+    ["Testing", "Jest, React Testing Library, Cypress, Playwright"],
+    ["Performance", "Core Web Vitals, Lighthouse, Code Splitting, Lazy Loading, Bundle Optimization"],
+    ["Accessibility", "WCAG, ARIA, Keyboard Navigation, Screen Readers"],
+    ["Security & Auth", "JWT, OAuth, XSS and CSRF Protection"],
+    ["Cloud & DevOps", "AWS, CI/CD (GitHub Actions, Jenkins), Docker, Vite, Webpack"],
+    ["AI Tools", "GitHub Copilot, Claude, Prompt Engineering"],
+    ["Tools", "Git, GitHub, Jira, Confluence, Figma, Postman"]
+  ],
+  "jobs": [
+    {
+      "company": "Acme Commerce Inc.",
+      "title": "Senior Frontend Engineer",
+      "dates": "Mar 2022 - Present",
+      "keyProjects": "Storefront Redesign (E-commerce), Seller Dashboard (Marketplace), Checkout (Payments)",
+      "bullets": [
+        "Led frontend delivery for 3 customer-facing products with React and TypeScript, owning each from design review through production support.",
+        "Rebuilt the storefront on Next.js with server-side rendering, cutting page load time by about 35% and lifting Lighthouse scores above 90.",
+        "Created a library of 40+ reusable components shared across 3 applications, speeding up new feature delivery by about 25%.",
+        "Integrated 50+ REST and GraphQL endpoints with React Query caching, trimming redundant API calls by about 40%.",
+        "Raised unit test coverage above 80% with Jest and React Testing Library, adding Cypress flows for checkout and sign-in.",
+        "Migrated builds from Webpack to Vite, shortening local start time by about 60% and CI build time by about 30%.",
+        "Hardened 3 applications with JWT, OAuth, and XSS and CSRF safeguards after a security review.",
+        "Strengthened accessibility to WCAG standards with semantic HTML, ARIA, and keyboard support on all primary journeys.",
+        "Accelerated delivery by about 20% using GitHub Copilot and Claude for code generation, refactoring, and test writing, while reviewing every output for correctness and security.",
+        "Mentored 3 junior engineers and reviewed 200+ pull requests, resolving production incidents about 30% faster through clearer logging."
+      ]
+    },
+    {
+      "company": "Northwind Labs",
+      "title": "Software Engineer II",
+      "dates": "Jun 2019 - Feb 2022",
+      "bullets": [
+        "Developed 5+ React applications for logistics tracking used by 20+ warehouse teams.",
+        "Created 30+ reusable UI components and integrated 40+ REST APIs for consistent interfaces.",
+        "Tuned frontend performance, improving page load time by about 30% on core screens.",
+        "Reviewed 100+ pull requests and partnered with backend and QA teams across 15+ releases.",
+        "Resolved 50+ production issues during release cycles."
+      ]
+    },
+    {
+      "company": "Contoso Systems",
+      "title": "Junior Web Developer",
+      "dates": "Aug 2017 - May 2019",
+      "bullets": [
+        "Delivered 4+ responsive websites with JavaScript and CSS for small-business clients.",
+        "Wrote 25+ reusable frontend components that cut repeated UI work.",
+        "Fixed 100+ production defects, improving stability by about 25%.",
+        "Worked with designers and QA across 20+ releases."
+      ]
+    }
+  ],
+  "education": {"degree": "Bachelor of Science (Computer Science)", "school": "Example State University, Austin, TX", "cgpa": "GPA: 3.6 / 4.0"},
+  "certifications": ["AWS Certified Cloud Practitioner", "Meta Front-End Developer Professional Certificate", "Web Accessibility Specialist (example)"]
+}

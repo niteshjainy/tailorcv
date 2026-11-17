@@ -1,0 +1,32 @@
+{
+  "name": "tailorcv",
+  "version": "1.0.0",
+  "description": "Tailor resumes to job descriptions while preserving a master document's design, with validated Word-to-PDF output.",
+  "repository": { "type": "git", "url": "https://github.com/niteshjainy/tailorcv.git" },
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "doctor": "node scripts/setup.js --check",
+    "lint": "node kit/lint.js",
+    "resume": "node kit/make_resume.js",
+    "cover": "node kit/make_cover_letter.js",
+    "example": "node kit/make_resume.js resume/base_resume.json Example",
+    "design": "node kit/extract_design.js",
+    "test:design": "node scripts/test_design.js",
+    "test:policy": "node scripts/test_build_policy.js",
+    "test:formatting": "node scripts/test_formatting.js",
+    "check:public": "node scripts/check_public.js",
+    "preview": "node kit/preview_resume.js"
+  },
+  "dependencies": {
+    "docx": "^9.5.0",
+    "fast-xml-parser": "^5.12.1",
+    "fflate": "^0.8.3",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.5.438"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "outputRoot": "output",
+  "outputFileName": "{first}_{last}_resume.pdf",
+  "coverLetterFileName": "{first}_{last}_cover_letter.pdf",
+  "maxPages": "auto",
+  "fallbackFont": "auto",
+  "downloadFonts": true,
+  "formatAudit": true,
+  "minFormatConformancePercent": 98,
+  "summaryEnding": "",
+  "lockTitle": true,
+  "requireAiToolsBullet": false,
+  "minNumberCoveragePercent": 85,
+  "skillRows": [11, 14],
+  "recentJobBullets": [10, 13],
+  "extraTools": []
+}
