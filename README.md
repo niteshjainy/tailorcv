@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/license-MIT-6C63FF.svg" alt="MIT license">
 </p>
 
-Tailor your resume to each job description with Claude Code or Codex. The visual guide covers setup, adding your master resume, and tailoring from a full job posting; its source is [`docs/index.html`](docs/index.html).
+Tailor your resume to each job description with Claude Code or Codex. The [intro page](docs/index.html) points to the visual setup guide, whose source is [`docs/guide.html`](docs/guide.html).
 
 Reference-design extraction: [master PDF/DOCX workflow](docs/06-REFERENCE-DESIGN.md). Requires Node.js 22.13+. `npm run design` reads the actual reference. `maxPages: "auto"` follows the master and asks before expanding a one-page resume. Missing fonts are downloaded when permitted, or replaced with a disclosed default. Run `npm run test:design` and `npm run test:policy` to verify the pipeline.
 
@@ -63,7 +63,8 @@ Try it first with the sample resume: `npm run example` creates `output/Example/a
 
 | Guide | What it covers |
 |---|---|
-| [docs/index.html](docs/index.html) | Visual guide with copy-paste command cards, diagrams and a resume preview (also works as a GitHub Pages site) |
+| [docs/index.html](docs/index.html) | Shareable TailorCV intro page |
+| [docs/guide.html](docs/guide.html) | Visual setup guide with copy-paste command cards, diagrams and a resume preview |
 | [docs/01-INSTALL.md](docs/01-INSTALL.md) | Install Node, LibreOffice and the project on Windows, Mac, Linux (with auto-install) |
 | [docs/02-CONFIGURE-YOUR-RESUME.md](docs/02-CONFIGURE-YOUR-RESUME.md) | Your base resume, every field, `config.json` options |
 | [docs/03-CONNECT-AN-LLM.md](docs/03-CONNECT-AN-LLM.md) | Connect Claude Code (or another agent), API key, no-agent mode |

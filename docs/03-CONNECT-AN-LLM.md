@@ -1,6 +1,6 @@
 # Install, launch, then let the agent guide setup
 
-The [visual guide](index.html#step-1) shows the setup for both assistants, including clearly labelled launch-screen illustrations.
+The [visual guide](guide.html#step-1) shows the setup for both assistants, including clearly labelled launch-screen illustrations.
 
 ## Claude Code
 
@@ -31,7 +31,7 @@ Reopen a terminal in your chosen local work folder. **Run `codex` and press Ente
 
 ## What to paste after launch
 
-Use the [setup message](index.html#step-3). It gives the agent the repository URL and asks it to obtain the project, read its instructions, check/install permitted prerequisites, run setup/doctor, and pause to guide you when the master resume is needed. A project that already exists locally should be reused.
+Use the [setup message](guide.html#step-3). It gives the agent the repository URL and asks it to obtain the project, read its instructions, check/install permitted prerequisites, run setup/doctor, and pause to guide you when the master resume is needed. A project that already exists locally should be reused.
 
 The agent needs local files, terminal and network access; authentication/installation prompts may need you to act. Keep your original resume intact and share a file path or copy it into the named `resume/source/` folder when asked.
 

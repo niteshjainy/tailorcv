@@ -1,10 +1,10 @@
 # Publish the visual guide after review
 
-The guide source is `docs/index.html`, with two original launch illustrations in `docs/assets/`. CSS and JavaScript are inline, with no CDN or build step. Keep the assets folder beside the HTML. It works locally and from a GitHub Pages `/docs` source.
+The shareable landing page is `docs/index.html`; the full walkthrough is `docs/guide.html`. The guide uses two launch illustrations in `docs/assets/`. CSS and JavaScript are inline, with no CDN or build step. Keep the assets folder beside the HTML. GitHub Pages publishes the landing page at `/` and the walkthrough at `/guide.html` when `/docs` is selected as its source.
 
 ## Review locally first
 
-Open `docs/index.html` in a browser. Check Windows/macOS/Linux instructions, the separate installation and launch commands, launch illustrations, setup message, master-folder map and full-post message. There is no checklist, side tracker, JD form or browser storage. Launch illustrations are labelled examples, not screenshots of the reader's actual session.
+Open `docs/index.html` and `docs/guide.html` in a browser. Check the intro links, Windows/macOS/Linux instructions, separate installation and launch commands, launch illustrations, setup message, master-folder map and full-post message. There is no checklist, side tracker, JD form or browser storage. Launch illustrations are labelled examples, not screenshots of the reader's actual session.
 
 No GitHub upload or Pages deployment should happen before the owner finishes this review.
 
@@ -14,7 +14,7 @@ From the project terminal, **after review**:
 
 ```sh
 npm run check:public
-git add README.md docs/index.html docs/assets/ docs/03-CONNECT-AN-LLM.md docs/PUBLISHING_GUIDE.md AGENTS.md CLAUDE.md LESSONS.md
+git add README.md docs/index.html docs/guide.html docs/assets/ docs/03-CONNECT-AN-LLM.md docs/PUBLISHING_GUIDE.md AGENTS.md CLAUDE.md LESSONS.md
 git commit -m "Add visual beginner guide for Claude Code and Codex"
 git push
 ```
