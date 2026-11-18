@@ -1,141 +1,107 @@
-# Getting started (follow these steps in order)
+# Start with your assistant
 
-This guide takes you from zero to your first tailored resume PDF. It takes about 20 to 30 minutes the first time. After that, each resume takes a minute or two.
+Open the [visual guide](docs/index.html) in a browser for launch illustrations, copyable messages and the master-resume folder map.
 
-## What you need
-- A computer with Windows 10/11, macOS or Linux.
-- An internet connection.
-- An AI coding agent account. This guide uses **Claude Code**, which needs a paid Claude plan (Pro, Max, Team or Enterprise) or an Anthropic API account. Other agents work too: see [docs/03-CONNECT-AN-LLM.md](docs/03-CONNECT-AN-LLM.md).
-- Your current resume as text (you will paste it once).
+You only need **Claude Code or Codex**. Install one, launch its chat, and let it guide the project setup. TailorCV is free; AI-provider access, limits and charges are separate.
 
-## How it works in one minute
-1. You keep **one** resume of yours in this project (`resume/base_resume.json`).
-2. For each job you paste the **job description (JD)** to the AI agent.
-3. The agent rewrites your summary, skills and latest-job bullets to match the JD, checks its own work, and builds a **2-page PDF** with a fixed, professional layout.
-4. You read the PDF, remove anything that is not true for you, and apply.
+## 1. Install an assistant, if needed
 
-> **Important:** the agent matches each JD on purpose (it adds the JD's skills and keywords). You are responsible for your resume. Delete anything you could not explain in an interview, and replace estimated numbers (the agent flags them) with your real figures.
+Already installed? Skip to step 2.
 
----
+**Claude Code — Windows PowerShell:**
 
-## Step 1: Install Node.js
-1. Go to https://nodejs.org and download the **LTS** version. Install it with the default options.
-2. Open a terminal:
-   - **Windows:** press the Windows key, type `PowerShell`, open it.
-   - **Mac:** open the Terminal app.
-   - **Linux:** open your terminal.
-3. Check it works:
-   ```
-   node -v
-   ```
-   You should see a version number such as `v22.x.x` (22.13 or higher is required).
-
-## Step 2: Download the project
-Pick one:
-- **With git:**
-  ```
-  git clone https://github.com/niteshjainy/tailorcv.git
-  cd tailorcv
-  ```
-- **Without git:** on the GitHub page click **Code**, then **Download ZIP**. Extract it, and open a terminal in the extracted folder (Windows: in File Explorer open the folder, click the address bar, type `powershell`, press Enter).
-
-Tip: if you plan to keep your own resume in the project, click **Fork** or **Use this template** on GitHub and make your copy **private**.
-
-## Step 3: Run the setup
-In the project folder run:
+```powershell
+irm https://claude.ai/install.ps1 | iex
 ```
-npm run setup
+
+**Claude Code — macOS/Linux:**
+
+```sh
+curl -fsSL https://claude.ai/install.sh | bash
 ```
-It checks everything and **asks before installing** anything:
-- the Node packages (runs `npm install`),
-- **LibreOffice** (the free program that creates the PDF),
-- the Calibri-compatible font (Linux only).
 
-Answer `y` to each question. When it finishes you should see `All set.` If it says something is still missing, follow the message, close and reopen the terminal, and run `npm run doctor` to re-check.
+**Codex — Windows PowerShell:**
 
-## Step 4: Test that PDF creation works
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
 ```
-npm run example
+
+**Codex — macOS/Linux:**
+
+```sh
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
 ```
-Expected output ends with:
+
+These native installers do not need Node.js first. See [Claude's official quickstart](https://code.claude.com/docs/en/quickstart) and [Codex's official quickstart](https://github.com/openai/codex#quickstart) for current accounts and installation options.
+
+## 2. Launch the chat
+
+Create an empty local folder, such as `Documents/TailorCV`, and open a terminal in it. If you already have the project downloaded, use its existing folder instead.
+
+- Windows: in File Explorer, open the folder, click the address bar, type `powershell`, press Enter.
+- macOS: type `cd ` in Terminal, drag the folder into the window, press Enter.
+- Linux: use the file manager's Open in Terminal option, or `cd` to the folder.
+
+**Launch Claude Code:**
+
+```sh
+claude
 ```
-SAVED: .../output/Example/alex_morgan_resume.pdf
-  pages: 2 ... | fonts: Carlito ... | text OK
+
+**Or launch Codex:**
+
+```sh
+codex
 ```
-Open that PDF. It is a sample resume, so you know the layout works on your computer.
 
-## Step 5: Install and connect the AI agent (Claude Code)
-1. Install Claude Code (official instructions: https://code.claude.com/docs/en/setup):
-   - **Windows (PowerShell):** `irm https://claude.ai/install.ps1 | iex`
-   - **Mac / Linux:** `curl -fsSL https://claude.ai/install.sh | bash`
-2. Close and reopen the terminal, then in the project folder run:
-   ```
-   claude
-   ```
-3. The first start opens your browser. Log in with your Claude account. (If you use an API account instead, see [docs/03-CONNECT-AN-LLM.md](docs/03-CONNECT-AN-LLM.md).)
-4. When the agent asks for permission to run a command or create a file, read it and approve.
+Press Enter. Complete first-run browser sign-in and folder prompts. For Codex, choose **Sign in with ChatGPT** if that is your account route. For Claude Code, use an account with supported subscription, Console/API or organization access.
 
-Using a different agent? Start it in this folder and say: `Read AGENTS.md and follow it exactly.`
+`claude --version` and `codex --version` only print versions; they do **not** open a chat. If a Windows npm installation is blocked through `codex.ps1`, use `codex.cmd` to launch instead. Keep the launched assistant open for the next message.
 
-## Step 6: Put your own resume into the project (one time)
-Copy your old resume file (PDF, Word or text) into the folder `resume/source/`. Then paste this to the agent:
+## 3. Give the assistant the project link
+
+Paste this into the **running assistant chat**, not into a separate PowerShell window:
+
+```text
+Set up TailorCV for me from:
+https://github.com/niteshjainy/tailorcv
+
+Use this folder if the project is already here; otherwise get it in a new tailorcv subfolder. Use Git or the project ZIP as available. Read AGENTS.md, CLAUDE.md, LESSONS.md and kit/FORMAT_SPEC.md.
+
+Check Node.js 22.13+ and LibreOffice, installing missing components where permitted. If I must complete a manual step, explain it and wait. Run setup and doctor.
+
+Then guide me to add my master resume. Give me the full resume/source/ path and wait for my PDF/DOCX, or use a readable file path I provide. Preserve the original file, extract its actual design, keep maxPages auto and show the professional summary only once. Don't tailor the fictional example as my resume.
 ```
-Read CLAUDE.md, LESSONS.md and kit/FORMAT_SPEC.md. Run "npm run doctor". My base resume is still the sample, so start onboarding. My resume is the file in resume/source/. If you cannot read it, I will paste the text.
+
+The assistant needs local file/terminal/network access. Login, installation permissions or a missing installer can require your action; this is guided setup, not a promise of unattended installation from a URL.
+
+If you prefer manual download, use **Code → Download ZIP** on the [repository](https://github.com/niteshjainy/tailorcv), extract it and open the folder containing `package.json` before sending the same message. The agent will reuse it.
+
+## 4. Add your master when asked
+
+Copy a selectable-text PDF or DOCX into the project's `resume/source/` folder and say **“Done, I've added my master resume.”** Any filename is fine.
+
+Alternatively, tell the assistant the full path to your existing resume. It can copy a readable file into the project without moving the original. If the path isn't accessible, it will explain where to copy it yourself.
+
+The assistant prepares your master content and design, then shows a preview. Check your fixed facts—name, contact details, employers, dates and education—once. No manual JSON editing is needed.
+
+If tools need manual installation, use [Node.js LTS](https://nodejs.org/en/download) (22.13+) and [LibreOffice](https://www.libreoffice.org/installation-instructions/). Return to the assistant and say **“Done—continue setup.”**
+
+## 5. Paste the whole job-posting page
+
+Copy all text from the **individual job's page**, including the company name, title, location and JD. No cleanup or separately typed company field is needed.
+
+```text
+Tailor my resume for the job in the page text below. Use my saved master content and design. Identify the company, role and requirements yourself; ignore menus, cookie notices and unrelated recommended jobs. Follow the project instructions and build the PDF.
+
+Full job-posting page text:
+<paste everything copied from the individual job page>
 ```
-No file? Paste your resume text into the chat instead.
-The agent converts it into `resume/base_resume.json` without changing your facts and checks it. **Read the result.** Your job titles, company names, dates, education and certifications must be exactly right, because the tool locks them so that tailored resumes can never change them.
 
-You can also edit `resume/base_resume.json` by hand: see [docs/02-CONFIGURE-YOUR-RESUME.md](docs/02-CONFIGURE-YOUR-RESUME.md).
+The agent extracts the target job, saves the relevant JD and builds the PDF. It only needs clarification if multiple target roles are equally plausible. If asked about pages, reply **“Keep it to one page”** or **“Two pages are fine.”**
 
-## Step 7: Create your first tailored resume
-Send this (replace the company name and paste the full JD):
-```
-Company: Acme
-JD:
-<paste the complete job description here>
-```
-The agent will:
-1. save the JD and a working copy of your resume in `work/`,
-2. rewrite the summary, skills and latest-job bullets for the JD,
-3. run the build (lint, Word file, LibreOffice, checks),
-4. fix any warnings and reply.
+## 6. Open the saved PDF
 
-Your PDF is here:
-```
-output/Acme/<first>_<last>_resume.pdf
-```
-(You can change the folder and file name in `config.json`, for example `"outputRoot": "~/Desktop/resume"`.)
+The assistant gives you its full path, usually `output/<Company>/<first>_<last>_resume.pdf`. Check its layout/contact details and any estimated figures.
 
-## Step 8: Review before you apply
-1. Open the PDF and read it fully.
-2. Remove any skill, tool or claim you could not explain in an interview.
-3. Replace estimated numbers with your real ones. Just tell the agent, for example: `The page-load improvement was 22 percent. Update it and rebuild.`
-4. If something is wrong, tell the agent in plain words. It saves a lesson in `LESSONS.md` so it does not repeat the mistake.
-
-Then apply with that PDF.
-
----
-
-## Next time (every new job)
-1. Open a terminal in the project folder and run `claude`.
-2. Send `Company: <name>` and `JD: <paste>`.
-3. Review the PDF in `output/<Company>/` and apply.
-
-## Other things you can ask the agent
-- `Cover letter too.`
-- `Why this role and what have I built?` (short answers for application forms)
-- `Write the application email.`
-- `Give me the top 8 skills to type into the application form.`
-- `Rebuild with these changes: ...`
-
-## If something goes wrong
-| Problem | What to do |
-|---|---|
-| `LibreOffice not found` | Run `npm run setup`, or install it from https://www.libreoffice.org, then reopen the terminal |
-| `Cannot find module 'docx'` | Run `npm install` |
-| `page count is 3` | Ask the agent to shorten the content. Do not change fonts or margins |
-| The agent tries to draw the PDF itself | Say: `Read CLAUDE.md section 5. Use only kit/make_resume.js.` |
-| Anything else | Run `npm run doctor` and see [docs/05-TROUBLESHOOTING-AND-CUSTOMIZING.md](docs/05-TROUBLESHOOTING-AND-CUSTOMIZING.md) |
-
-## Keep your data private
-Your resume text is sent to the AI provider you connect. If you publish your own copy of this project, do **not** commit your real `resume/base_resume.json`, and keep `work/` and `output/` out of git (they are already git-ignored).
+For the next job, open the same local project folder, launch your assistant and paste the next job posting. No repeat installation or onboarding is needed for the same master.

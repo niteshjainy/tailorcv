@@ -1,5 +1,7 @@
 # TailorCV
 
+**New to TailorCV?** Start with the [visual setup guide](https://niteshjainy.github.io/tailorcv/) for Claude Code or Codex. It walks through installing the tools, adding your master resume, and tailoring it to a full job posting. The source HTML is in [`docs/index.html`](docs/index.html).
+
 Reference-design extraction: [master PDF/DOCX workflow](docs/06-REFERENCE-DESIGN.md). Requires Node.js 22.13+. `npm run design` reads the actual reference. `maxPages: "auto"` follows the master and asks before expanding a one-page resume. Missing fonts are downloaded when permitted, or replaced with a disclosed default. Run `npm run test:design` and `npm run test:policy` to verify the pipeline.
 
 Formatting safeguards preserve section separators, render one summary in the master's position, choose compatible font families, and calibrate fixed paragraph gaps against LibreOffice output. `npm run test:formatting` verifies these regressions and checks that missing separators block the final save. The 98% threshold measures the explicitly listed style checks, not overall/pixel accuracy; see the workflow guide for scope and tolerances.

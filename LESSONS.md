@@ -6,6 +6,11 @@ Each lesson has: the mistake, the rule, and the lint check (if any). The agent r
 
 ---
 
+## Keep the getting-started guide focused on starting
+**Feedback:** Completion buttons and sidebar tracking added unnecessary complexity; version and launch commands were confusing; users need a launch-screen visual, an agent-led setup path, and permission to paste the whole job page.
+**Rule:** Keep the guide to install/sign in, launch, one setup message, master resume and pasted job page. Separate launch from optional version checks. Show clearly labelled launch illustrations. Let the agent check/install permitted prerequisites and pause to explain any manual step, especially adding a master. Accept a full copied job posting and infer its company/role without requiring the user to clean it first. Keep ZIP as a fallback, and explain public GitHub/Pages links separately for sharing.
+**Check:** Guide browser checks verify no progress/checklist UI, single launch commands, OS/agent variants, setup/full-post copy messages and launch-image loading.
+
 ## Preserve the master's visual structure and render only one summary
 **Feedback:** The generated resume lost the master's section separators, used an unrelated sans-serif fallback for a serif master, and duplicated the top professional summary as a fixed title plus another summary section.
 **Rule:** Compare the original PDF visually before accepting extraction. Extract horizontal separators, per-element offsets, typography and labelled skills correctly. Detect when the apparent title is actually the master's summary; render the tailored summary once in that same position, without retaining the old prose. Preserve a real short title separately. Prefer a licensed same-family font download; otherwise select a stylistically and metrically similar fallback and disclose it. Validate the actual output against independently measured reference properties; never present a passing test count as pixel accuracy or fabricate a 98% score.
@@ -67,3 +72,8 @@ Each lesson has: the mistake, the rule, and the lint check (if any). The agent r
 **Mistake:** Calling `soffice.exe` from a script did not wait for the conversion on some Windows machines.
 **Rule:** Prefer `soffice.com`, and call it with `--headless --norestore --nologo` and a timeout.
 **Check:** `make_resume.js` already does this.
+# Downloaded-install regression: do not silently redesign a master
+
+- A test used a two-column Aditya master but substituted a default single-column spec, dropped Languages/Core Skills, and bypassed the enrolled Nitesh identity with an alternate base. The final report omitted the audit entirely. JD matching and one-page output do not establish formatting fidelity.
+- Final builds must require existing, hash-verified source provenance and an enabled audit. Reinspect source layout at build time. Reject unsupported columns rather than flattening them or claiming 98% accuracy. Never remove provenance or loosen spacing to get a green build.
+- Keep the enrolled master and extracted design in agreement. A different person's source requires explicit onboarding; preserve all factual source sections, including languages and core skills.
