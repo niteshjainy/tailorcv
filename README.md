@@ -1,6 +1,22 @@
 # TailorCV
 
-**New to TailorCV?** Start with the [visual setup guide](https://niteshjainy.github.io/tailorcv/) for Claude Code or Codex. It walks through installing the tools, adding your master resume, and tailoring it to a full job posting. The source HTML is in [`docs/index.html`](docs/index.html).
+<p align="center">
+  <img src="docs/assets/tailorcv-banner.svg" alt="TailorCV — tailor your resume to the job, keep your design" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://tailorcv.niteshjainy.online/"><strong>📘 Beginner setup guide</strong></a>
+  &nbsp;·&nbsp; <a href="docs/04-USAGE.md">How it works</a>
+  &nbsp;·&nbsp; <a href="https://github.com/niteshjainy/tailorcv">GitHub repository</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-22.13%2B-43853D?logo=node.js&logoColor=white" alt="Node.js 22.13 or newer">
+  <img src="https://img.shields.io/badge/LibreOffice-required-18A303?logo=libreoffice&logoColor=white" alt="LibreOffice required">
+  <img src="https://img.shields.io/badge/license-MIT-6C63FF.svg" alt="MIT license">
+</p>
+
+Tailor your resume to each job description with Claude Code or Codex. The visual guide covers setup, adding your master resume, and tailoring from a full job posting; its source is [`docs/index.html`](docs/index.html).
 
 Reference-design extraction: [master PDF/DOCX workflow](docs/06-REFERENCE-DESIGN.md). Requires Node.js 22.13+. `npm run design` reads the actual reference. `maxPages: "auto"` follows the master and asks before expanding a one-page resume. Missing fonts are downloaded when permitted, or replaced with a disclosed default. Run `npm run test:design` and `npm run test:policy` to verify the pipeline.
 
@@ -11,8 +27,12 @@ Tailor your resume to any job description with an AI coding agent, and get a cle
 You keep **one** resume in the repo (`resume/base_resume.json`). For every job, you paste the job description (JD) to the agent. The agent rewrites the summary, skills and recent-job bullets to match the JD, checks its own work with a linter, and builds a 2-page PDF with a fixed, professional layout.
 
 ```
-JD text  ->  AI agent (reads CLAUDE.md / AGENTS.md)  ->  work/<company>.json  ->  lint  ->  Word file  ->  LibreOffice  ->  <first>_<last>_resume.pdf
+Master resume + full job description  →  AI agent  →  tailored PDF
 ```
+
+<p align="center">
+  <img src="docs/assets/tailorcv-workflow.svg" alt="TailorCV workflow: master resume and job description go through Claude Code or Codex to create a tailored PDF" width="100%">
+</p>
 
 Why a Word file in the middle? PDFs drawn directly by code often have broken text (ligatures become unreadable characters), overlapping lines and wrong fonts, which ATS software cannot parse. Converting a real Word file with LibreOffice gives real text, embedded Calibri-compatible fonts and correct bullet wrapping. See `samples/sample_resume.pdf` for the result.
 
@@ -20,19 +40,22 @@ Why a Word file in the middle? PDFs drawn directly by code often have broken tex
 
 ## Quick start
 
-**New here? Open [docs/index.html](docs/index.html) (the visual guide) or follow [GETTING_STARTED.md](GETTING_STARTED.md) step by step.** The short version:
+**New here? Follow the [visual setup guide](https://tailorcv.niteshjainy.online/).** For the short version:
 
 1. Install **Node.js 22.13+** (https://nodejs.org) and get this project (`git clone` or download the ZIP).
 2. In the project folder run: `npm run setup` (installs the Node packages and offers to install LibreOffice).
 3. Connect an AI agent, for example Claude Code: see [docs/03-CONNECT-AN-LLM.md](docs/03-CONNECT-AN-LLM.md).
 4. Put your resume into `resume/base_resume.json`: either paste it to the agent ("onboarding") or edit the JSON: see [docs/02-CONFIGURE-YOUR-RESUME.md](docs/02-CONFIGURE-YOUR-RESUME.md).
 5. Start the agent in this folder and send:
+
    ```
    Company: Acme
    JD:
    <paste the job description>
    ```
-   Your PDF appears in `output/Acme/<first>_<last>_resume.pdf`.
+<br>
+
+**Output:** Your PDF appears in `output/Acme/<first>_<last>_resume.pdf`.
 
 Try it first with the sample resume: `npm run example` creates `output/Example/alex_morgan_resume.pdf`.
 
@@ -41,7 +64,6 @@ Try it first with the sample resume: `npm run example` creates `output/Example/a
 | Guide | What it covers |
 |---|---|
 | [docs/index.html](docs/index.html) | Visual guide with copy-paste command cards, diagrams and a resume preview (also works as a GitHub Pages site) |
-| [GETTING_STARTED.md](GETTING_STARTED.md) | Step-by-step first run for beginners |
 | [docs/01-INSTALL.md](docs/01-INSTALL.md) | Install Node, LibreOffice and the project on Windows, Mac, Linux (with auto-install) |
 | [docs/02-CONFIGURE-YOUR-RESUME.md](docs/02-CONFIGURE-YOUR-RESUME.md) | Your base resume, every field, `config.json` options |
 | [docs/03-CONNECT-AN-LLM.md](docs/03-CONNECT-AN-LLM.md) | Connect Claude Code (or another agent), API key, no-agent mode |

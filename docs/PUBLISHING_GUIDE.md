@@ -14,7 +14,7 @@ From the project terminal, **after review**:
 
 ```sh
 npm run check:public
-git add docs/index.html docs/assets/ docs/03-CONNECT-AN-LLM.md docs/PUBLISHING_GUIDE.md GETTING_STARTED.md AGENTS.md CLAUDE.md LESSONS.md
+git add README.md docs/index.html docs/assets/ docs/03-CONNECT-AN-LLM.md docs/PUBLISHING_GUIDE.md AGENTS.md CLAUDE.md LESSONS.md
 git commit -m "Add visual beginner guide for Claude Code and Codex"
 git push
 ```
@@ -30,7 +30,7 @@ GitHub's ordinary file viewer shows the HTML source. For a browser-rendered guid
 3. Select **main** and **/docs**, then **Save**.
 4. Wait for the Pages deployment to finish. Use the **Visit site** link shown by GitHub.
 
-For this repository, the expected URL after successful publication is `https://niteshjainy.github.io/tailorcv/`. It is not a live-site promise before deployment. The owner can add the resulting URL to the repository's About section and README.
+This repository uses the custom Pages URL `https://tailorcv.niteshjainy.online/`. Add that URL to the repository's About section and README after confirming the deployment is live.
 
 GitHub Free requires a **public repository** for Pages. Other plans may support private repositories, but a Pages site can still be publicly accessible. Change visibility only when the owner is ready to launch. See [GitHub's current Pages requirements](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 

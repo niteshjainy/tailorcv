@@ -1,6 +1,6 @@
 # Install, launch, then let the agent guide setup
 
-The [visual guide](index.html#step-1) shows the short path for both assistants, including clearly labelled launch-screen illustrations. The [text walkthrough](../GETTING_STARTED.md) contains the same process.
+The [visual guide](index.html#step-1) shows the setup for both assistants, including clearly labelled launch-screen illustrations.
 
 ## Claude Code
 
